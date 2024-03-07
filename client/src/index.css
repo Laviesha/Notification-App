@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz@0,6..12;1,6..12&family=Poppins:ital,wght@0,200;0,400;1,300;1,400&display=swap');
+body{
+  color:white;
+  font-family: "Nunito", sans-serif;
+  background: rgb(40,40,40);
+}
