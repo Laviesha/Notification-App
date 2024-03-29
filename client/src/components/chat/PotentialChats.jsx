@@ -6,7 +6,7 @@ const PotentialChats = () => {
     const {user} = useContext(AuthContext)
   const {potentialChats,createChat} = useContext(ChatContext)
 //   console.log("PotentialChats", potentialChats);
-console.log("pChats", potentialChats)
+// console.log("pChats", potentialChats)
     return (
     <>
       <div className="all-users">
