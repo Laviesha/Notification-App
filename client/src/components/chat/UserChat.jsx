@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Stack} from "react-bootstrap";
 import { useFetchRecipientUser } from '../../hooks/useFetchRecipient'
 import avartar from "../../assets/avartar.svg"
+import { ChatContext } from '../../context/ChatContext';
 
 const UserChat = ({chat,user}) => {
-    const {recipientUser} = useFetchRecipientUser(chat,user)
+    const {recipientUser} = useFetchRecipientUser(chat,user);
+    const {onlineUsers} = useContext(ChatContext)
     // console.log(recipientUser);
+const isOnline =  onlineUsers?.some((user)=>user?.userId===recipientUser?._id)
+
   return (
     <Stack direction="horizontal" gap={3} className='user-card align-items-center p-2 justify-content-between' role='button'>
         <div className="d-flex">
@@ -22,7 +26,7 @@ const UserChat = ({chat,user}) => {
                 12/03/24
             </div>
             <div className="this-user-notifications">2</div>
-            <span className='user-online'></span>
+            <span className={isOnline ? 'user-online' : ""}></span>
         </div>
         </Stack>
       
